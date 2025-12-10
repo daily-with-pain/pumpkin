@@ -1,0 +1,94 @@
+/* ========================================
+   Pumpkin Story Specific Style
+   ======================================== */
+
+/* ========================================
+   Scrolling Text (Marquee) Effect
+   ======================================== */
+/* 外層容器：控制高度與隱藏溢出 */
+.scrolling-text-wrapper {
+    width: 100%;
+    overflow: hidden;
+    margin-bottom: 1.5rem;
+    padding: 0;
+    
+    display: flex;
+    flex-direction: column; /* 讓文字垂直排列（變成兩行） */
+    gap: 10px; /* 兩行之間的距離 */
+
+    min-height: 100vh;
+    justify-content: center;
+
+    background: linear-gradient(to bottom, 
+        var(--bg-content) 0%, 
+        var(--bg-voice) 15%, 
+        var(--bg-voice) 85%, 
+        var(--bg-content) 100%
+        );   
+}
+
+/* 通用的文字跑馬燈設定 */
+.scrolling-text {
+    font-family: var(--font-serif);
+    font-weight: 900;
+    white-space: nowrap;
+    width: fit-content; /* 讓寬度剛好包住文字 */
+
+    /* 初始狀態：在畫面右側外面 */
+    transform: translateX(100vw); 
+
+    
+    /* 動畫設定：10秒跑完一輪，線性速度，無限循環 */
+    /* animation: scroll-left 5s linear infinite; */
+
+    /* 確保過渡平滑 */
+    will-change: transform;
+}
+
+/* ★ 新增這一段：當擁有 active class 時，才開始跑動畫 ★ */
+.scrolling-text.active {
+    animation: scroll-left 6s linear infinite;
+}
+
+/* --- 第一行：焦慮 (天啊！我好尿遁喔) --- */
+.line-1 {
+    font-size: 5rem;  
+    color: #2a2a2a;         
+}
+
+/* --- 第二行：無奈 (然後我就算了) --- */
+.line-2 {
+    font-size: 2.5rem;   
+    color: #666;         
+   
+    /* 也可以讓第二行稍微錯開位置，不要對得太齊，更有層次感 */
+    /* margin-left: 10%;  */
+}
+
+/* ★ 新增這一段：line-2 的延遲設定 ★ */
+.line-2.active {
+    animation-delay: 2.5s;
+}
+
+/* 定義動畫：從右邊畫面外(100vw) 跑到 左邊畫面外(-100%) */
+@keyframes scroll-left {
+    0% {
+        transform: translateX(100vw);
+    }
+    100% {
+        transform: translateX(-120%); /* 確保完全跑出左邊界 */
+    }
+}
+
+
+/* Responsive Design for Pumpkin Story */
+@media (max-width: 768px) {
+    
+
+    .line-1 { font-size: 3rem; }
+    .line-2 { 
+        animation-delay: 1s; 
+        font-size: 2rem;
+    }
+    .scrolling-text { animation-duration: 4s; }
+}
