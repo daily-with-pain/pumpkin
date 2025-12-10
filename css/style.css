@@ -17,6 +17,8 @@
     /* full-bleed-media (語音播放區)背景色 */
     --bg-bridge: #E5E0DC;
     /* 轉場區背景色 */
+    --bg-footer: #413e41;
+    /* footer 背景色 */
 
     --accent-color: #544733;
     /* 主要強調色 */
@@ -200,16 +202,69 @@ strong {
     transition: opacity 0.3s ease;
 }
 
-/* Footer - 頁腳 */
-footer {
-    background: var(--text-strong);
-    color: var(--text-tertiary);
-    padding: 40px 20px;
-    text-align: center;
-    margin-top: 0px;
-    font-size: 0.9rem;
-    font-family: var(--font-sans);
-    letter-spacing: 0.05em;
+/* Footer */
+.site-footer {
+    background-color: var(--bg-footer); /* 深灰色背景，比純黑更有質感 */
+    color: #d9d9d9;            /* 柔和的白色文字 */
+    padding: 60px 20px;        /* 上下留白，讓版面呼吸 */
+    font-family: var(--font-serif);   /* 使用無襯線字體，比較現代 */
+    font-size: 14px;           /* 字體不用太大 */
+    line-height: 1.5;          /* 行距拉開，比較好讀 */
+    margin-top: 50px;          /* 跟正文保持距離 */
+}
+
+/* 讓內容置中並限制最大寬度 */
+.footer-content {
+    max-width: 800px;
+    margin: 0 auto;            /* 水平置中 */
+    text-align: center;        /* 文字置中 */
+}
+
+/* 標題樣式 */
+.footer-section h3 {
+    font-size: 16px;
+    margin-bottom: 15px;
+    color: var(--color-progress);    
+    letter-spacing: 1px;
+}
+
+/* 分隔線 */
+.footer-divider {
+    border: 0;
+    height: 1px;
+    margin: 10px auto;
+}
+
+/* 連結的樣式 */
+.site-footer a {
+    color: #bbb;
+    text-decoration: none;
+    border-bottom: 1px dotted #bbb;
+    transition: color 0.3s;
+}
+
+.site-footer a:hover {
+    color: #d9d9d9;               /* 滑鼠移過去變亮白 */
+    border-bottom: 1px solid #d9d9d9;
+}
+
+.site-footer strong {
+    font-weight: 700;      /* 加粗 */
+    color: #d9d9d9;        /* 或者是 #d9d9d9 (亮灰色)，比一般文字更亮 */
+    margin-right: 4px;     /* 小細節：人名跟職稱之間稍微拉開一點距離 */
+}
+
+/* 特別小的字（給授權聲明用） */
+.small-text {
+    font-size: 12px;
+    color: #bfbfbf;
+    margin-top: 10px;
+}
+
+.footer-bottom {
+    margin-top: 40px;
+    font-size: 12px;
+    color: #bfbfbf;
 }
 
 /* ========================================
