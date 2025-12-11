@@ -62,20 +62,22 @@
     top: 10%;
     left: 50%;
     transform: translateX(-50%);
+    font-weight: 600;
+    
 }
 
 /* 左側文字（保留但不使用）*/
-.intro-text-left {
+/* .intro-text-left {
     left: 5%;
     top: 50%;
     transform: translateY(-50%);
-}
+} */
 
 /* 右側文字 （保留但不使用）*/
-.intro-text-right {
+/* .intro-text-right {
     right: 5%;
     left: auto;
-}
+} */
 
 /* 最終「日」字 - 左側往中間靠 */
 .intro-text-final-left {
@@ -90,9 +92,8 @@
 }
 
 .intro-text .line {
-    /* 使用與 .content-section p 相同的樣式 */
-    font-family: var(--font-sans);
-    font-size: 1.1rem;
+    font-family: var(--font-serif);
+    font-size: 1.2rem;
     line-height: 1.8;
     letter-spacing: 0.05em;
     color: var(--accent-color);
@@ -110,17 +111,16 @@
 /* 最終「日常」特殊樣式 */
 .intro-text .line-emphasis {
     font-family: "Noto Serif TC", Georgia, serif;
-    font-style: italic;
+    /* font-style: italic; */
     font-weight: 900;
     font-size: 11rem;
-    /* 調整這個數字來改變大小 */
 
     /* 立體陰影效果 */
-    text-shadow:
-        2px 2px 4px rgba(0, 0, 0, 0.3),
+    /* text-shadow: */
+        /* 2px 2px 4px rgba(0, 0, 0, 0.3),
         4px 4px 8px rgba(0, 0, 0, 0.2),
-        6px 6px 12px rgba(0, 0, 0, 0.1);
-}
+        6px 6px 12px rgba(0, 0, 0, 0.1);*/
+} 
 
 /* 打字機效果 - 每一行會被 JS 加上 typing class */
 .intro-text .line.typing {
@@ -182,6 +182,31 @@
 /* ========================================
    Responsive Design
    ======================================== */
+@media (max-width: 920px) {
+    .intro-text-final-left,
+    .intro-text-final-right {
+        position: absolute;
+        left: 60%;
+        transform: translateX(-50%);
+        width: auto;
+        text-align: center;
+        z-index: 10;
+    }
+
+    .intro-text-final-left {
+        top: 40px;
+    }
+    .intro-text-final-right {
+        top: 130px;
+    }
+    .intro-text-final-left .line-emphasis,
+    .intro-text-final-right .line-emphasis {
+        font-size: 4rem;
+        writing-mode: vertical-rl;
+        text-align: center;
+        text-orientation: upright;
+    }
+}
 
 @media (max-width: 768px) {
     .face-section header h1 {
@@ -190,5 +215,35 @@
 
     .face-section header p {
         font-size: 1.1rem;
+    }
+}
+
+@media (max-width: 622px) {
+    .intro-text .line {
+        font-size: 1rem;
+    }
+
+    .intro-text-final-left,
+    .intro-text-final-right {
+        position: absolute;
+        left: 60%;
+        transform: translateX(-50%);
+        width: auto;
+        text-align: center;
+        z-index: 10;
+    }
+
+    .intro-text-final-left {
+        top: 40px;
+    }
+    .intro-text-final-right {
+        top: 130px;
+    }
+    .intro-text-final-left .line-emphasis,
+    .intro-text-final-right .line-emphasis {
+        font-size: 4rem;
+        writing-mode: vertical-rl;
+        text-align: center;
+        text-orientation: upright;
     }
 }

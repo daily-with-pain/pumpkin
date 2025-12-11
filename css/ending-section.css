@@ -28,6 +28,14 @@
     opacity: 0.85;
 }
 
+/* ending-subtitle 手機自動換行，桌機維持一行 */
+.ending-subtitle .subtitle-mobile-br {
+    display: none;
+}
+.ending-subtitle .subtitle-desktop {
+    display: inline;
+}
+
 .quote-block {
     margin: 60px 0;
     position: relative;
@@ -58,6 +66,11 @@
     letter-spacing: 0.05em;
 }
 
+/* quote-english 桌機/手機版切換 */
+.quote-english-mobile {
+    display: none;
+}
+
 .quote-author {
     display: block;
     text-align: right;
@@ -85,4 +98,22 @@
     color: var(--accent-color);
     margin: 0;
     text-align: center !important;
+}
+
+@media (max-width: 600px) {
+    .ending-subtitle .subtitle-mobile-br {
+        display: inline;
+    }
+    .ending-subtitle .subtitle-desktop {
+        display: none;
+    }
+    .quote-english {
+        display: none;
+    }
+    .quote-english-mobile {
+        display: block;
+        text-align: center;
+        margin-top: 0.5em;
+        margin-bottom: 0.5em;
+    }
 }

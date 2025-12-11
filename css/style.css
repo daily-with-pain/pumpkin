@@ -7,7 +7,7 @@
     /* Color Palette */
     --bg-content: #DDDCDD;
     /* 內容區背景色 */
-    --bg-chapter:#cdcbcd;
+    --bg-chapter: #cdcbcd;
     /* 章節背景色 */
     --bg-ending: #F2F5EE;
     /* ending section 背景色 */
@@ -140,14 +140,14 @@ strong {
 }
 
 .index-tab.active {
-    left: 280px;
+    left: 320px;
 }
 
 .nav-menu {
     position: fixed;
     top: 0;
     left: -100%;
-    width: 280px;
+    width: 320px;
     height: 100vh;
     background: rgba(240, 240, 240, 0.9);
     backdrop-filter: blur(10px);
@@ -172,10 +172,6 @@ strong {
     font-weight: 500;
     transition: all 0.3s ease;
     font-family: var(--font-sans);
-}
-
-.nav-link:first-child {
-    font-weight: 700;
 }
 
 .nav-link:hover {
@@ -214,27 +210,36 @@ strong {
 
 /* Footer */
 .site-footer {
-    background-color: var(--bg-footer); /* 深灰色背景，比純黑更有質感 */
-    color: #d9d9d9;            /* 柔和的白色文字 */
-    padding: 60px 20px;        /* 上下留白，讓版面呼吸 */
-    font-family: var(--font-serif);   /* 使用無襯線字體，比較現代 */
-    font-size: 14px;           /* 字體不用太大 */
-    line-height: 1.5;          /* 行距拉開，比較好讀 */
-    margin-top: 0px;          /* 跟正文保持距離 */
+    background-color: var(--bg-footer);
+    /* 深灰色背景，比純黑更有質感 */
+    color: #d9d9d9;
+    /* 柔和的白色文字 */
+    padding: 60px 20px;
+    /* 上下留白，讓版面呼吸 */
+    font-family: var(--font-serif);
+    /* 使用無襯線字體，比較現代 */
+    font-size: 14px;
+    /* 字體不用太大 */
+    line-height: 1.5;
+    /* 行距拉開，比較好讀 */
+    margin-top: 0px;
+    /* 跟正文保持距離 */
 }
 
 /* 讓內容置中並限制最大寬度 */
 .footer-content {
     max-width: 800px;
-    margin: 0 auto;            /* 水平置中 */
-    text-align: center;        /* 文字置中 */
+    margin: 0 auto;
+    /* 水平置中 */
+    text-align: center;
+    /* 文字置中 */
 }
 
 /* 標題樣式 */
 .footer-section h3 {
     font-size: 16px;
     margin-bottom: 15px;
-    color: var(--color-progress);    
+    color: var(--color-progress);
     letter-spacing: 1px;
 }
 
@@ -254,14 +259,18 @@ strong {
 }
 
 .site-footer a:hover {
-    color: #d9d9d9;               /* 滑鼠移過去變亮白 */
+    color: #d9d9d9;
+    /* 滑鼠移過去變亮白 */
     border-bottom: 1px solid #d9d9d9;
 }
 
 .site-footer strong {
-    font-weight: 700;      /* 加粗 */
-    color: #d9d9d9;        /* 或者是 #d9d9d9 (亮灰色)，比一般文字更亮 */
-    margin-right: 4px;     /* 小細節：人名跟職稱之間稍微拉開一點距離 */
+    font-weight: 700;
+    /* 加粗 */
+    color: #d9d9d9;
+    /* 或者是 #d9d9d9 (亮灰色)，比一般文字更亮 */
+    margin-right: 4px;
+    /* 小細節：人名跟職稱之間稍微拉開一點距離 */
 }
 
 /* 特別小的字（給授權聲明用） */
@@ -286,12 +295,12 @@ strong {
     width: 100%;
     min-height: 100vh;
     /* padding: 0 20px; */
-    
+
     /* 讓裡面的東西永遠死死地定在正中間 */
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center; 
+    align-items: center;
 }
 
 /* 轉場設計 */
@@ -300,11 +309,11 @@ strong {
     min-height: 100vh;
     padding: 0 20px;
 
-    background: linear-gradient(to bottom,
+    /* background: linear-gradient(to bottom,
             var(--bg-content) 0%,
             var(--bg-bridge) 15%,
             var(--bg-bridge) 85%,
-            var(--bg-bridge) 100%);
+            var(--bg-bridge) 100%); */
 }
 
 .bridge-content {
@@ -342,17 +351,20 @@ strong {
 
 .chapter-content {
     text-align: center;
-    position: relative; /* 為了做一些裝飾定位 */
+    position: relative;
+    /* 為了做一些裝飾定位 */
 }
 
 .chapter-content .chapter-number {
-    font-family: var(--font-sans); /* 用無襯線體顯示數字比較現代 */
+    font-family: var(--font-sans);
+    /* 用無襯線體顯示數字比較現代 */
     font-size: 1rem;
     letter-spacing: 0.2em;
     text-transform: uppercase;
     color: var(--text-tertiary);
     margin-bottom: 1rem;
-    display: block; /* 獨佔一行 */
+    display: block;
+    /* 獨佔一行 */
 }
 
 .chapter-content .chapter-title {
@@ -369,8 +381,10 @@ strong {
     display: block;
     width: 55px;
     height: 2px;
-    background-color: var(--text-tertiary); /* 或用你的主題色 */
-    margin: 2rem auto 0; /* 設在標題下方 */
+    background-color: var(--text-tertiary);
+    /* 或用你的主題色 */
+    margin: 2rem auto 0;
+    /* 設在標題下方 */
 }
 
 /* Content Section - 文字區塊 */
@@ -408,8 +422,8 @@ strong {
     align-items: center;
     justify-content: center;
     margin: 60px auto 0;
-    background: var(--accent-color);
-    border: 1px solid var(--accent-color);
+    background: var(--text-primary);
+    border: 1px solid var(--text-primary);
     border-radius: 20px;
     padding: 6px 16px;
     font-family: var(--font-sans);
@@ -424,18 +438,18 @@ strong {
 }
 
 .global-audio-btn:hover {
-    background: var(--accent-hover);
+    background: #595959;
     transform: translateY(-1px);
     box-shadow: 0 3px 8px rgba(84, 71, 51, 0.3);
 }
 
 .global-audio-btn.muted {
-    background: var(--text-primary);
-    border-color: var(--text-primary);
+    background: var(--accent-color);
+    border-color: var(--accent-color);
 }
 
 .global-audio-btn.muted:hover {
-    background: #3d3d3d;
+    background: var(--accent-light);
 }
 
 .global-audio-btn .audio-text {
@@ -746,6 +760,20 @@ strong {
     .progress-mute-btn svg {
         width: 24px;
         height: 24px;
+    }
+}
+
+@media (max-width: 600px) {
+    .chapter-title {
+        font-size: 1.3rem;
+    }
+
+    .bridge-content .text-intro {
+        font-size: 1.2rem;
+    }
+
+    .bridge-content .text-punchline {
+        font-size: 3rem;
     }
 }
 
