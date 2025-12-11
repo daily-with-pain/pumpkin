@@ -1,94 +1,161 @@
 /* ========================================
    Pumpkin Story Specific Style
    ======================================== */
-
+   
 /* ========================================
-   Scrolling Text (Marquee) Effect
+   漩渦文字特效樣式（尿遁）
    ======================================== */
-/* 外層容器：控制高度與隱藏溢出 */
-.scrolling-text-wrapper {
+/* 外層舞台 */
+.vortex-wrapper {
+    position: relative;
     width: 100%;
-    overflow: hidden;
-    margin-bottom: 1.5rem;
-    padding: 0;
-    
+    height: 80vh;
     display: flex;
-    flex-direction: column; /* 讓文字垂直排列（變成兩行） */
-    gap: 10px; /* 兩行之間的距離 */
-
-    min-height: 100vh;
     justify-content: center;
-
-    background: linear-gradient(to bottom, 
-        var(--bg-content) 0%, 
-        var(--bg-voice) 15%, 
-        var(--bg-voice) 85%, 
-        var(--bg-content) 100%
-        );   
+    align-items: center;
+    overflow: hidden;
+    background: transparent;
 }
 
-/* 通用的文字跑馬燈設定 */
-.scrolling-text {
+/* SVG 設定：一直轉 */
+.vortex-svg {
+    width: 90%;
+    max-width: 600px;
+    height: auto;
+    /* 持續旋轉，不會停 */
+    animation: slowSpin 30s linear infinite;
+}
+
+/* 文字共用樣式 */
+.vortex-text {
     font-family: var(--font-serif);
     font-weight: 900;
-    white-space: nowrap;
-    width: fit-content; /* 讓寬度剛好包住文字 */
-
-    /* 初始狀態：在畫面右側外面 */
-    transform: translateX(100vw); 
-
-    
-    /* 動畫設定：10秒跑完一輪，線性速度，無限循環 */
-    /* animation: scroll-left 5s linear infinite; */
-
-    /* 確保過渡平滑 */
-    will-change: transform;
+    fill: #2a2a2a;
+    font-size: 26px;
+    opacity: 0;
+    transition: opacity 0.5s ease-in;
+    letter-spacing: 5px;
 }
 
-/* ★ 新增這一段：當擁有 active class 時，才開始跑動畫 ★ */
-.scrolling-text.active {
-    animation: scroll-left 6s linear infinite;
+/* 各圈大小微調 */
+.ring-1 {
+    font-size: 32px;
+    fill: #444;
 }
 
-/* --- 第一行：焦慮 (天啊！我好尿遁喔) --- */
-.line-1 {
-    font-size: 5rem;  
-    color: #2a2a2a;         
+.ring-2 {
+    font-size: 28px;
+    fill: #666;
 }
 
-/* --- 第二行：無奈 (然後我就算了) --- */
-.line-2 {
-    font-size: 2.5rem;   
-    color: #666;         
-   
-    /* 也可以讓第二行稍微錯開位置，不要對得太齊，更有層次感 */
-    /* margin-left: 10%;  */
+.ring-3 {
+    font-size: 24px;
+    fill: #888;
 }
 
-/* ★ 新增這一段：line-2 的延遲設定 ★ */
-.line-2.active {
-    animation-delay: 2.5s;
+.ring-4 {
+    font-size: 20px;
+    fill: #aaa;
 }
 
-/* 定義動畫：從右邊畫面外(100vw) 跑到 左邊畫面外(-100%) */
-@keyframes scroll-left {
+/* 顯示狀態 */
+.vortex-text.show {
+    opacity: 1;
+}
+
+/* ★ 新增：變淡狀態 (取代原本的 vanish) ★ */
+/* 這樣漩渦不會消失，只是變半透明，讓中間的字比較好讀 */
+.vortex-text.dim {
+    opacity: 0.30;
+    transition: opacity 1.5s ease-out;
+}
+
+@keyframes slowSpin {
     0% {
-        transform: translateX(100vw);
+        transform: rotate(0deg);
     }
+
     100% {
-        transform: translateX(-120%); /* 確保完全跑出左邊界 */
+        transform: rotate(360deg);
     }
 }
 
+/* 修改：水平書寫的最終文字 */
+.final-text {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    /* 保持幾何中心定位 */
 
-/* Responsive Design for Pumpkin Story */
+    /* 這裡不需要 writing-mode 了，預設就是水平 */
+
+    font-family: var(--font-serif);
+    font-size: 2.5rem;
+    /* 字體大小 */
+    font-weight: 700;
+    color: var(--accent-color);
+    letter-spacing: 0.1rem;
+    /* 水平排列時，字距不用拉那麼開，稍微緊一點比較好看 */
+
+    opacity: 0;
+    transition: opacity 1.5s ease-in;
+    z-index: 10;
+
+    /* 確保文字不換行 */
+    white-space: nowrap;
+    text-align: center;
+}
+
+.final-text.visible {
+    opacity: 1;
+}
+
+/* RWD: 針對手機與平板 (寬度小於 768px) */
 @media (max-width: 768px) {
-    
 
-    .line-1 { font-size: 3rem; }
-    .line-2 { 
-        animation-delay: 1s; 
-        font-size: 2rem;
+    .vortex-wrapper {
+        height: 100vh;
+        padding: 0;
     }
-    .scrolling-text { animation-duration: 4s; }
+
+    .vortex-svg {
+        width: 130%;
+        /* 再次放大！讓它更有魄力 */
+        max-width: none;
+        margin-left: 0;
+        flex-shrink: 0;
+    }
+
+    .vortex-text {
+        font-size: 18px;
+        /* 基礎字體加大 */
+        letter-spacing: 2px;
+        /* 字距不用太寬，讓字看起來更紮實 */
+    }
+
+    /* 針對剩下的三圈做特寫設定 */
+    .ring-1 {
+        font-size: 30px;
+    }
+
+    /* 外圈超大，很有壓迫感 */
+    .ring-2 {
+        font-size: 24px;
+    }
+
+    .ring-3 {
+        font-size: 20px;
+    }
+
+    /* 原本的第三圈現在變最小圈 */
+
+    /* 最終文字修正 */
+    .final-text {
+        font-size: 1.5rem;
+        /* 因為內圈不見了，中間空間變大，這句也可以稍微大一點點 */
+        width: 90%;
+        white-space: nowrap;
+        letter-spacing: 0px;
+    }
 }

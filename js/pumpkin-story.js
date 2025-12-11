@@ -1,25 +1,51 @@
-// ===== 南瓜「尿遁」故事跑馬燈效果 JS ======
+// // ===== 南瓜「尿遁」故事漩渦效果 JS ======
 
 $(document).ready(function() {
+    
+    let hasTriggered = false;
 
-    // ====== 跑馬燈觸發偵測 ======
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
-            // 如果區塊進入視窗 (isIntersecting)
-            if (entry.isIntersecting) {
-                // 幫裡面的文字加上 'active' class，動畫就會開始
-                const lines = entry.target.querySelectorAll('.scrolling-text');
-                lines.forEach(line => line.classList.add('active'));
-                
-                // (可選) 觸發一次後就取消偵測，避免滑進滑出一直重置
-                // observer.unobserve(entry.target); 
+            if (entry.isIntersecting && !hasTriggered) {
+                hasTriggered = true;
+                runVortexSequence();
             }
         });
-    }, { threshold: 0.7 }); // threshold: 0.7 代表「看到 70% 的區塊」時觸發
+    }, { threshold: 0.9 }); // 看到 90% 的區塊時觸發
 
-    // 開始偵測那個包著文字的外框
-    const wrapper = document.querySelector('.scrolling-text-wrapper');
+    const wrapper = document.getElementById('vortexTrigger');
     if (wrapper) {
         observer.observe(wrapper);
+    }
+
+    function runVortexSequence() {
+        const rings = wrapper.querySelectorAll('.vortex-text');
+        const finalText = wrapper.querySelector('.final-text');
+        
+        const interval = 600; 
+
+        // 1. 依序出現
+        rings.forEach((ring, index) => {
+            setTimeout(() => {
+                ring.classList.add('show');
+            }, index * interval);
+        });
+
+        // 2. 全部出現後，讓背景變淡，中間文字浮現
+        const totalAppearTime = rings.length * interval;
+        const holdTime = 1200; // 全亮之後維持 1.2 秒再變淡
+
+        setTimeout(() => {
+            // 讓漩渦變淡 (但繼續轉)
+            rings.forEach(ring => {
+                ring.classList.add('dim');
+            });
+
+            // 顯示直排文字
+            setTimeout(() => {
+                finalText.classList.add('visible');
+            }, 500); // 背景開始變淡 0.5 秒後，文字浮現
+
+        }, totalAppearTime + holdTime);
     }
 });

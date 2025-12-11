@@ -202,6 +202,16 @@ strong {
     transition: opacity 0.3s ease;
 }
 
+/* Expandable Note - 受訪者隱私說明 */
+.editorial-note {
+    margin: 2rem auto;
+    max-width: 600px;
+    font-family: var(--font-serif);
+    font-size: 0.875rem;
+    color: var(--accent-color);
+    letter-spacing: 0.01rem;
+}
+
 /* Footer */
 .site-footer {
     background-color: var(--bg-footer); /* 深灰色背景，比純黑更有質感 */
@@ -210,7 +220,7 @@ strong {
     font-family: var(--font-serif);   /* 使用無襯線字體，比較現代 */
     font-size: 14px;           /* 字體不用太大 */
     line-height: 1.5;          /* 行距拉開，比較好讀 */
-    margin-top: 50px;          /* 跟正文保持距離 */
+    margin-top: 0px;          /* 跟正文保持距離 */
 }
 
 /* 讓內容置中並限制最大寬度 */

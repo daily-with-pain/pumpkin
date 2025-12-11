@@ -21,7 +21,7 @@
     <link rel="stylesheet" href="css/face-section.css">
     <link rel="stylesheet" href="css/pumpkin-story.css">
     <link rel="stylesheet" href="css/ending-section.css">
-</head>
+=</head>
 
 <body>
 
@@ -68,7 +68,7 @@
                 <p class="line">這是南瓜（化名），</p>
                 <p class="line">今年 36 歲，</p>
                 <p class="line">在醫院擔任衛教人員的她，</p>
-                <p class="line">是一位慢性下背痛患者。</p>
+                <p class="line">是一位<strong>慢性下背痛</strong>患者。</p>
                 <p class="line">近三年來，</p>
                 <p class="line">每當症狀惡化，</p>
                 <p class="line">這樣的「抉擇」便成為她不得不面對的</p>
@@ -106,6 +106,11 @@
                 <div class="row">
                     <div class="col-lg-3"></div>
                     <div class="col-lg-6 content-text">
+                        <div class="editorial-note">
+                            <p style="font-weight: 500;">2025/12/11 最後更新<br>
+                                ※為保護受訪者隱私，「南瓜」之訪談錄音均已經過變聲處理。</p>
+                        </div>
+
                         <p>南瓜的工作經常需要搬重物，因此長期都有腰酸背痛的問題。2016
                             年左右，她的腰開始頻繁閃到。閃到就去復健診所治療，「好了就不理它」——這樣的「閃到才治療」模式維持了五六年。
                         </p>
@@ -277,12 +282,55 @@
             </div>
         </section>
 
-        <div class="scrolling-text-wrapper">
+        <!-- <div class="scrolling-text-wrapper">
             <div class="scrolling-text line-1">
                 天啊！我好尿遁喔！
             </div>
             <div class="scrolling-text line-2">
                 然後我就算了......
+            </div>
+        </div> -->
+
+        <div class="vortex-wrapper" id="vortexTrigger">
+
+            <svg class="vortex-svg" viewBox="0 0 600 600">
+                <defs>
+                    <path id="circle-1" d="M 300, 300 m -190, 0 a 190,190 0 1,1 380,0 a 190,190 0 1,1 -380,0" />
+
+                    <path id="circle-2" d="M 300, 300 m -150, 0 a 150,150 0 1,1 300,0 a 150,150 0 1,1 -300,0" />
+
+                    <path id="circle-3" d="M 300, 300 m -110, 0 a 110,110 0 1,1 220,0 a 110,110 0 1,1 -220,0" />
+
+                    <path id="circle-4" d="M 300, 300 m -70, 0 a 70,70 0 1,1 140,0 a 70,70 0 1,1 -140,0" />
+                </defs>
+
+                <text class="vortex-text ring-1" dy="-10">
+                    <textPath href="#circle-1" startOffset="0%">
+                        天啊！我好尿遁喔！　　天啊！我好尿遁喔！　　天啊！我好尿遁喔！　　天啊！我好尿遁喔！
+                    </textPath>
+                </text>
+
+                <text class="vortex-text ring-2" dy="-5">
+                    <textPath href="#circle-2" startOffset="33%">
+                        天啊！我好尿遁喔！　　天啊！我好尿遁喔！　　天啊！我好尿遁喔！
+                    </textPath>
+                </text>
+
+                <text class="vortex-text ring-3" dy="-5">
+                    <textPath href="#circle-3" startOffset="10%">
+                        天啊！我好尿遁喔！　　　　天啊！我好尿遁喔！
+                    </textPath>
+                </text>
+
+                <text class="vortex-text ring-4" dy="-5">
+                    <textPath href="#circle-4" startOffset="50%">
+                        天啊！我好尿遁喔！　　天啊！我好尿遁喔！
+                    </textPath>
+                </text>
+            </svg>
+
+            <div class="final-text">
+                (´_ゝ`) 然後我就算了...
             </div>
         </div>
 

@@ -7,11 +7,13 @@
     height: 1200vh;
     position: relative;
     width: 100%;
-    background: linear-gradient(to bottom,
+    /* background: linear-gradient(to bottom,
             var(--bg-chapter) 0%,
             var(--bg-chapter) 50%,
             var(--bg-content) 85%,
-            var(--bg-content) 100%);
+            var(--bg-content) 100%); */
+    background: var(--bg-chapter);
+
 }
 
 /* 圖片容器 - 固定 100vh 並黏住 */
