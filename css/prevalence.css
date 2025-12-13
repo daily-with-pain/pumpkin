@@ -199,3 +199,59 @@
     .scroll-text-block p { font-size: 1.2rem; padding: 1.5rem; }
     .paper-icon { width: 40px; height: 56px; gap: 10px; }
 }
+
+
+/* 影片容器 (維持不變) */
+.video-wrapper {
+    position: relative;
+    width: 100%;
+    margin: 1.5rem 0;
+    overflow: hidden;
+    background-color: var(--bg-content);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+/* 影片本體 (維持不變) */
+.autoplay-video {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+}
+
+.video-mute-btn {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    z-index: 10;
+
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    background: var(--color-white);
+    border: none;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.15);
+    cursor: pointer;
+    
+    /* 讓圖示置中 */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* 滑鼠懸停效果 */
+.video-mute-btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+    background: var(--color-white);
+}
+
+/* 圖示顏色設定 (配合 style.css 的 accent-color) */
+.video-mute-btn svg {
+    width: 24px;
+    height: 24px;
+    fill: var(--accent-color); /* 深褐色圖示 */
+    stroke: none; /* 確保沒有邊框線 */
+}

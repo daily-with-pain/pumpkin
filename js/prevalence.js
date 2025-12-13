@@ -70,3 +70,62 @@ document.addEventListener("DOMContentLoaded", function () {
     const counterBg = document.querySelector('.counter-bg');
     if(counterBg) observer.observe(counterBg);
 });
+
+
+/* js/main.js - 自動播放與聲音控制 */
+
+document.addEventListener("DOMContentLoaded", function() {
+    
+    const videoWrappers = document.querySelectorAll('.video-wrapper');
+
+    // 1. 設定 Intersection Observer (滑到才播，滑走暫停)
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            const video = entry.target.querySelector('video');
+            if (!video) return;
+
+            if (entry.isIntersecting) {
+                // 進入畫面：嘗試播放
+                video.play().catch(error => {
+                    console.log("自動播放被瀏覽器阻擋，需使用者互動:", error);
+                });
+            } else {
+                // 離開畫面：暫停 (節省效能)
+                video.pause();
+            }
+        });
+    }, { threshold: 0.5 }); // 露出 50% 才開始播，避免誤觸
+
+    // 2. 為每個影片區塊綁定功能
+    videoWrappers.forEach(wrapper => {
+        const video = wrapper.querySelector('video');
+        const btn = wrapper.querySelector('.video-mute-btn');
+        const iconMuted = btn.querySelector('.icon-muted');
+        const iconUnmuted = btn.querySelector('.icon-unmuted');
+
+        // 加入觀察名單
+        observer.observe(wrapper);
+
+        // 點擊按鈕：切換靜音狀態
+        btn.addEventListener('click', function() {
+            // 切換靜音屬性
+            video.muted = !video.muted;
+
+            // 如果原本沒在播 (例如被阻擋)，點擊時順便強制播放
+            if (video.paused) {
+                video.play();
+            }
+
+            // 切換圖示
+            if (video.muted) {
+                iconMuted.style.display = 'flex';
+                iconUnmuted.style.display = 'none';
+                btn.setAttribute('aria-label', '開啟聲音');
+            } else {
+                iconMuted.style.display = 'none';
+                iconUnmuted.style.display = 'flex';
+                btn.setAttribute('aria-label', '關閉聲音');
+            }
+        });
+    });
+});
