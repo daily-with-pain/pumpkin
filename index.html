@@ -22,6 +22,7 @@
     <link rel="stylesheet" href="css/pumpkin-story.css">
     <link rel="stylesheet" href="css/ending-section.css">
     <link rel="stylesheet" href="css/intro-section.css">
+    <link rel="stylesheet" href="css/prevalence.css">
 </head>
 
 <body>
@@ -565,8 +566,7 @@
         <!-- ========================================
         Prevalence Section
         ======================================== -->
-
-        <section id="prevalence" class="fullscreen-wrapper">
+        <section class="fullscreen-wrapper">
             <section class="fullscreen-wrapper section-chapter">
                 <div class="chapter-content">
                     <span class="chapter-number">Chapter 02</span>
@@ -578,16 +578,89 @@
             </section>
         </section>
 
-        <section class="content-section">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-3"></div>
-                    <div class="col-lg-6 content-text">
+        <section id="prevalence" class="prevalence-container">
 
+            <div class="scroll-scene" style="height: 250vh;">
+                
+                <div class="sticky-visual people-pattern-bg">
+                    <div class="people-overlay"></div>
+                </div>
+
+                <div class="scroll-text-track">
+
+                    <div style="height: 30vh;"></div>
+
+                    <div class="scroll-text-block">
+                        <p>全民健保資料庫的成果報告顯示，<br>在台灣有高達 <strong>70-85%</strong> 的民眾......</p>
                     </div>
-                    <div class="col-lg-3"></div>
+                    <div class="scroll-text-block">
+                        <p>一生中至少會經歷一次下背痛。<br>若以疼痛程度來看，則僅次於頭痛。</p>
+                    </div>
                 </div>
             </div>
+
+            <div class="scroll-scene" style="height: 350vh;">
+                
+                <div class="sticky-visual counter-bg">
+                    <div class="counter-wrapper">
+                        <span class="counter-label">年就診人數</span>
+                        <span id="patient-counter" class="counter-number">0</span>
+                        <span class="counter-unit">人</span>
+                    </div>
+                </div>
+
+                <div class="scroll-text-track">
+
+                    <div style="height: 30vh;"></div>
+
+                    <div class="scroll-text-block light-bg-text">
+                        <p>不僅如此，統計指出，<br>光是因「背痛」走進西醫門診的患者......</p>
+                    </div>
+                    <div class="scroll-text-block light-bg-text">
+                        <p>一年就高達 201 萬人。</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="content-section" style="background-color: var(--bg-content); padding-top: 100px;">
+                <div class="container">
+                    <div class="row justify-content-center">
+                        <div style="height: 10vh;"></div>
+                        <div class="col-lg-6 content-text text-center">
+                            
+                            <p>這不僅是 45 歲以下族群暫時失能的首要原因，甚至在職場上，每七張病假單，就有一張與下背痛有關 。</p>
+
+                            <div style="height: 10vh;"></div>
+                            
+                            <div class="sick-leave-visual reveal-on-scroll">
+                                <div class="paper-icon"></div>
+                                <div class="paper-icon"></div>
+                                <div class="paper-icon"></div>
+                                <div class="paper-icon target"></div> <div class="paper-icon"></div>
+                                <div class="paper-icon"></div>
+                                <div class="paper-icon"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="content-section">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-3"></div>
+                        <div class="col-lg-6 content-text">
+                            <p>下背痛發作時，痛感可能從下背延伸至臀部、大腿甚至腳底，導致行走困難。許多時候，連簡單的彎腰、穿襪子，或從椅子上站起來，都可能因為劇痛而變得困難。此外，疼痛常在夜間加劇，導致患者難以入眠或痛醒，嚴重影響睡眠品質。</p>
+                            <p><strong>然而最讓人絕望的不是痛，而是「好不了」。</strong></p>
+                            <p>研究指出，下背痛一年內的再復發機率高達 7 成。更有 10% 至 20% 的患者演變為持續超過三個月的「慢性下背痛」。</p>
+                            <p>南瓜，正是這數據下的真實縮影——從初期的反覆發作，最終一步步落入了慢性疼痛的泥沼。</p>
+                            <div style="height: 5vh;"></div>
+                        </div>
+                        <div class="col-lg-3"></div>
+                    </div>
+                </div>
+            </div>
+
         </section>
 
         <!-- ========================================
@@ -805,6 +878,7 @@
     <script src="js/face-section.js"></script>
     <script src="js/pumpkin-story.js" defer></script>
     <script src="js/intro-section.js"></script>
+    <script src="js/prevalence.js"></script>
 
 </body>
 
