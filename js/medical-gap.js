@@ -4,6 +4,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
     const videoWrappers = document.querySelectorAll('.video-wrapper');
 
+    // 為每個影片建立延遲計時器
+    const playTimers = new Map();
+
     // 1. 設定 Intersection Observer (滑到才播，滑走暫停)
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
@@ -11,25 +14,43 @@ document.addEventListener("DOMContentLoaded", function () {
             if (!video) return;
 
             if (entry.isIntersecting) {
-                // 進入畫面：嘗試播放
-                // 檢查全域靜音狀態（如果 main.js 已經載入）
-                const shouldBeMuted = typeof isGlobalMuted !== 'undefined' ? isGlobalMuted : true;
+                // 進入畫面：設定延遲播放
+                // 清除之前的計時器（如果有）
+                if (playTimers.has(video)) {
+                    clearTimeout(playTimers.get(video));
+                }
 
-                // 設定影片靜音狀態
-                video.muted = shouldBeMuted;
+                // 設定新的延遲計時器（800ms 後才播放）
+                const timer = setTimeout(() => {
+                    // 檢查全域靜音狀態（如果 main.js 已經載入）
+                    const shouldBeMuted = typeof isGlobalMuted !== 'undefined' ? isGlobalMuted : true;
 
-                console.log(`🎬 Video autoplay: muted=${video.muted}, globalMuted=${shouldBeMuted}`);
+                    // 設定影片靜音狀態
+                    video.muted = shouldBeMuted;
 
-                video.play().catch(error => {
-                    console.log("自動播放被瀏覽器阻擋，嘗試靜音播放:", error);
-                    // 如果失敗，強制靜音後再試一次
-                    video.muted = true;
-                    video.play().catch(err => {
-                        console.error("即使靜音也無法播放:", err);
+                    console.log(`🎬 Video autoplay (after delay): muted=${video.muted}, globalMuted=${shouldBeMuted}`);
+
+                    video.play().catch(error => {
+                        console.log("自動播放被瀏覽器阻擋，嘗試靜音播放:", error);
+                        // 如果失敗，強制靜音後再試一次
+                        video.muted = true;
+                        video.play().catch(err => {
+                            console.error("即使靜音也無法播放:", err);
+                        });
                     });
-                });
+
+                    // 清除計時器
+                    playTimers.delete(video);
+                }, 800); // 延遲 800ms
+
+                playTimers.set(video, timer);
+
             } else {
-                // 離開畫面：暫停 (節省效能)
+                // 離開畫面：立即清除計時器並暫停
+                if (playTimers.has(video)) {
+                    clearTimeout(playTimers.get(video));
+                    playTimers.delete(video);
+                }
                 video.pause();
             }
         });

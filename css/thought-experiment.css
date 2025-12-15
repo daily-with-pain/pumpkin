@@ -692,6 +692,28 @@
 
 /* RWD 手機版微調 */
 @media (max-width: 768px) {
+    .cinema-screen-frame {
+        width: 95%;
+        /* 放大到 95% */
+        border: 0.5px solid #1a1a1a;
+        /* 縮小邊框 */
+    }
+
+    .outro-text-block {
+        padding: 0 20px;
+        /* 加入左右 padding */
+    }
+
+    .outro-text-block p {
+        font-size: 1.5rem;
+        /* 縮小字體 */
+    }
+
+    .outro-text-block .small-note {
+        font-size: 1rem;
+        /* 縮小小字 */
+    }
+
     .red-spot {
         font-size: 1.6rem;
         padding: 2px 8px;

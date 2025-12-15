@@ -64,6 +64,8 @@ body {
     letter-spacing: 0.05em;
     margin: 0;
     padding: 0;
+    overflow-x: hidden;
+    /* 防止水平滾動 */
 }
 
 h1,
