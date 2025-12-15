@@ -1,0 +1,220 @@
+/* css/prevalence.css */
+
+/* --- 1. Scrollytelling 基礎架構 (Grid 疊加版) --- */
+.prevalence-container {
+    background-color: var(--bg-content);
+    position: relative;
+}
+
+/* 每一個場景容器 */
+.scroll-scene {
+    position: relative;
+    display: grid;
+    grid-template-areas: "stack";
+}
+
+/* 背景層 (固定不動) */
+.sticky-visual {
+    grid-area: stack;
+    position: sticky;
+    top: 0;
+    height: 100vh;
+
+    /* 內容置中 */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+
+    z-index: 1;
+    /* 在底層 */
+}
+
+/* 文字軌道層 (負責捲動) */
+.scroll-text-track {
+    grid-area: stack;
+    position: relative;
+    z-index: 10;
+    /* 在上層 */
+    pointer-events: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    /* 從上面開始排 */
+}
+
+/* --- 卡片樣式優化--- */
+.scroll-text-block {
+    min-height: 80vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.scroll-text-block p {
+    /* 卡片外觀 */
+    background-color: var(--color-white);
+    padding: 2.5rem 3rem;
+    border-radius: 12px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+    border: 1px solid rgba(0, 0, 0, 0.05);
+
+    font-size: 1.3rem;
+    font-family: var(--font-sans);
+    color: var(--text-primary);
+    max-width: 500px;
+    text-align: justify;
+
+    opacity: 0;
+    transform: translateY(50px) scale(0.95);
+    transition: all 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+/* 當 JS 加上 .visible 時，卡片浮現並歸位 */
+.scroll-text-block.visible p {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+}
+
+
+/* --- 2. 場景一：人像陣列 (People Pattern) --- */
+.people-pattern-bg {
+    background-color: var(--bg-chapter);
+    /* 使用 SVG 製作小人像陣列，產生密集感 */
+    background-image: url('data:image/svg+xml;utf8,<svg width="40" height="40" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg"><path d="M20 20 C15 20 12 25 12 30 L12 40 L28 40 L28 30 C28 25 25 20 20 20 Z M20 10 A5 5 0 1 0 20 20 A5 5 0 1 0 20 10 Z" fill="%23b0b0b0" opacity="0.4"/></svg>');
+    background-size: 30px 30px;
+    /* 控制密集度，越小越密 */
+
+    /* 讓背景有一個慢慢變暗的暗角 */
+    box-shadow: inset 0 0 200px rgba(0, 0, 0, 0.2);
+}
+
+/* --- 3. 場景二：數字跳動 (Counter) --- */
+.counter-bg {
+    background-color: var(--bg-voice);
+    color: var(--color-white);
+    flex-direction: column;
+}
+
+.counter-wrapper {
+    text-align: center;
+}
+
+.counter-label {
+    display: block;
+    font-size: 1.2rem;
+    color: var(--text-tertiary);
+    margin-bottom: 1rem;
+    letter-spacing: 0.2em;
+}
+
+.counter-number {
+    font-family: var(--font-sans);
+    /* 或其他數字好看的字體 */
+    font-size: 6rem;
+    /* 超大數字 */
+    font-weight: 600;
+    color: var(--color-progress);
+    line-height: 1;
+    font-variant-numeric: tabular-nums;
+}
+
+.counter-unit {
+    font-size: 1.5rem;
+    color: var(--text-tertiary);
+    margin-left: 10px;
+}
+
+/* 數字場景的文字不需要白底，改為深色背景上的亮字 */
+.light-bg-text p {
+    background-color: var(--color-white);
+    color: var(--text-primary);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+
+/* --- 4. 場景三：病假單 (1/7) --- */
+.sick-leave-visual {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin: 3rem 0;
+    flex-wrap: wrap;
+}
+
+.paper-icon {
+    width: 50px;
+    height: 70px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    position: relative;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.05);
+    transition: all 0.5s ease;
+}
+
+/* 模擬紙張上的橫線 */
+.paper-icon::after {
+    content: "";
+    position: absolute;
+    top: 15px;
+    left: 8px;
+    right: 8px;
+    height: 2px;
+    background: #e0e0e0;
+    box-shadow: 0 6px 0 #e0e0e0, 0 12px 0 #e0e0e0, 0 18px 0 #e0e0e0;
+}
+
+/* 觸發後的樣式：其中一張變色 */
+.sick-leave-visual.active .paper-icon.target {
+    background-color: #d9534f;
+    /* 警告紅 */
+    border-color: #d43f3a;
+    transform: scale(1.2) rotate(-5deg);
+    box-shadow: 0 10px 20px rgba(217, 83, 79, 0.3);
+}
+
+/* 讓橫線變白 */
+.sick-leave-visual.active .paper-icon.target::after {
+    background: rgba(255, 255, 255, 0.5);
+    box-shadow: 0 6px 0 rgba(255, 255, 255, 0.5), 0 12px 0 rgba(255, 255, 255, 0.5), 0 18px 0 rgba(255, 255, 255, 0.5);
+}
+
+.highlight-quote {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--accent-color);
+    margin-top: 1rem;
+    line-height: 1.4;
+    text-align: center;
+}
+
+/* --- 5. 復發率進度條 --- */
+.stat-bar-container {
+    margin: 2rem 0;
+}
+
+.stat-label {
+    margin-bottom: 0.5rem;
+    font-weight: 700;
+    color: var(--text-strong);
+}
+
+/* RWD */
+@media (max-width: 768px) {
+    .counter-number {
+        font-size: 3.5rem;
+    }
+
+    .scroll-text-block p {
+        font-size: 1.2rem;
+        padding: 1.5rem;
+    }
+
+    .paper-icon {
+        width: 40px;
+        height: 56px;
+        gap: 10px;
+    }
+}

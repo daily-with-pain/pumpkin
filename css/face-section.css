@@ -63,7 +63,7 @@
     left: 50%;
     transform: translateX(-50%);
     font-weight: 600;
-    
+
 }
 
 /* 左側文字（保留但不使用）*/
@@ -117,10 +117,10 @@
 
     /* 立體陰影效果 */
     /* text-shadow: */
-        /* 2px 2px 4px rgba(0, 0, 0, 0.3),
+    /* 2px 2px 4px rgba(0, 0, 0, 0.3),
         4px 4px 8px rgba(0, 0, 0, 0.2),
         6px 6px 12px rgba(0, 0, 0, 0.1);*/
-} 
+}
 
 /* 打字機效果 - 每一行會被 JS 加上 typing class */
 .intro-text .line.typing {
@@ -183,6 +183,7 @@
    Responsive Design
    ======================================== */
 @media (max-width: 920px) {
+
     .intro-text-final-left,
     .intro-text-final-right {
         position: absolute;
@@ -196,9 +197,11 @@
     .intro-text-final-left {
         top: 40px;
     }
+
     .intro-text-final-right {
         top: 130px;
     }
+
     .intro-text-final-left .line-emphasis,
     .intro-text-final-right .line-emphasis {
         font-size: 4rem;
@@ -236,14 +239,61 @@
     .intro-text-final-left {
         top: 40px;
     }
+
     .intro-text-final-right {
         top: 130px;
     }
+
     .intro-text-final-left .line-emphasis,
     .intro-text-final-right .line-emphasis {
         font-size: 4rem;
         writing-mode: vertical-rl;
         text-align: center;
         text-orientation: upright;
+    }
+}
+
+/* ========================================
+   Image Credit - Sticky 在右下角
+   ======================================== */
+.face-image-credit {
+    position: absolute;
+    bottom: 20px;
+    right: 30px;
+    z-index: 5;
+
+    font-family: var(--font-serif);
+    font-size: 0.75rem;
+    color: var(--text-tertiary);
+    letter-spacing: 0.05em;
+
+    opacity: 0.7;
+    transition: opacity 0.3s ease;
+}
+
+.face-image-credit:hover {
+    opacity: 1;
+}
+
+/* 手機版調整 */
+@media (max-width: 768px) {
+    .face-image-credit {
+        font-size: 0.6rem;
+        bottom: 20px;
+        left: 50%;
+        right: auto;
+        transform: translateX(-50%);
+        text-align: center;
+
+        /* 加半透明背景增加可讀性 */
+        /* background-color: rgba(255, 255, 255, 0.8);
+        padding: 6px 12px;
+        border-radius: 4px; */
+
+        /* 防止換行 */
+        white-space: nowrap;
+        max-width: 90%;
+        overflow: hidden;
+        text-overflow: ellipsis;
     }
 }

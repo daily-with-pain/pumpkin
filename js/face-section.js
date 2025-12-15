@@ -9,6 +9,7 @@ function initFaceScrollEffect() {
     const mainLines = document.querySelectorAll('.intro-text-main .line');
     const leftLinesFinal = document.querySelectorAll('.intro-text-final-left .line');
     const rightLinesFinal = document.querySelectorAll('.intro-text-final-right .line');
+    const faceImageCredit = document.querySelector('.face-image-credit');
 
     if (!faceSection || !img01 || !img02) return;
 
@@ -29,6 +30,7 @@ function initFaceScrollEffect() {
             img01.style.opacity = 0.8;
             img02.style.opacity = 0;
             if (faceSectionHeader) faceSectionHeader.style.opacity = 0;
+            if (faceImageCredit) faceImageCredit.style.opacity = 0.7;
             mainLines.forEach(line => {
                 line.textContent = '';
                 line.style.opacity = 0;
@@ -51,6 +53,7 @@ function initFaceScrollEffect() {
                 img01.style.opacity = 0.8;
                 img02.style.opacity = 0;
                 if (faceSectionHeader) faceSectionHeader.style.opacity = 0;
+                if (faceImageCredit) faceImageCredit.style.opacity = 0.7;
                 const stageProgress = totalProgress / 0.286;
                 mainLines.forEach((line, index) => {
                     const lineStartProgress = index / mainLines.length;
@@ -86,6 +89,7 @@ function initFaceScrollEffect() {
                 });
             } else if (totalProgress < 0.429) {
                 if (faceSectionHeader) faceSectionHeader.style.opacity = 0;
+                if (faceImageCredit) faceImageCredit.style.opacity = 0.7;
                 const stageProgress = (totalProgress - 0.286) / 0.143;
                 mainLines.forEach(line => {
                     line.textContent = '';
@@ -122,6 +126,7 @@ function initFaceScrollEffect() {
                     line.style.opacity = 0;
                 });
                 if (faceSectionHeader) faceSectionHeader.style.opacity = 0;
+                if (faceImageCredit) faceImageCredit.style.opacity = 0.7;
                 img01.style.opacity = 0;
                 img02.style.opacity = 0.8;
                 leftLinesFinal.forEach((line, index) => {
@@ -150,6 +155,9 @@ function initFaceScrollEffect() {
                         line.textContent = rightTextsFinal[index];
                         line.style.opacity = Math.max(0, 1 - fadeOutProgress);
                     });
+                    if (faceImageCredit) {
+                        faceImageCredit.style.opacity = Math.max(0, 0.7 * (1 - fadeOutProgress));
+                    }
                     if (faceSectionHeader) {
                         faceSectionHeader.style.opacity = 0;
                     }
@@ -164,6 +172,9 @@ function initFaceScrollEffect() {
                         line.textContent = '';
                         line.style.opacity = 0;
                     });
+                    if (faceImageCredit) {
+                        faceImageCredit.style.opacity = 0;
+                    }
                     if (faceSectionHeader) {
                         faceSectionHeader.style.opacity = Math.min(1, fadeInProgress);
                     }
@@ -183,6 +194,9 @@ function initFaceScrollEffect() {
                 });
                 img01.style.opacity = 0;
                 img02.style.opacity = 0;
+                if (faceImageCredit) {
+                    faceImageCredit.style.opacity = 0;
+                }
                 if (faceSectionHeader) {
                     faceSectionHeader.style.opacity = 1;
                 }

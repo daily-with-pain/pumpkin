@@ -17,9 +17,11 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 
     <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/thought-experient.css">
+    <link rel="stylesheet" href="css/thought-experiment.css">
     <link rel="stylesheet" href="css/face-section.css">
     <link rel="stylesheet" href="css/pumpkin-story.css">
+    <link rel="stylesheet" href="css/prevalence.css">
+    <link rel="stylesheet" href="css/medical-gap.css">
     <link rel="stylesheet" href="css/ending-section.css">
 </head>
 
@@ -43,18 +45,159 @@
     <div class="project-tag">當疼痛成為日常</div>
 
     <!-- Thought Experiment Section -->
-    <section id="thought-experiment" class="content-section"
-        style="min-height: 100vh; display: flex; align-items: center; justify-content: center; background: #DDDCDD;">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-3"></div>
-                <div class="col-lg-6 content-text">
-                    <h2
-                        style="font-family: 'Noto Serif TC', Georgia, serif; font-size: 2.5rem; margin-bottom: 30px; text-align: center;">
-                        思想實驗</h2>
-                    <p style="text-align: center; color: #666; font-size: 1.2rem;">此章節內容待補充...</p>
+    <section id="intro">
+        <div class="intro-sticky-layer">
+            <div class="intro-bg-image" style="background-image: url('images/thought-experiment/01.webp');"></div>
+
+            <div class="intro-overlay"></div>
+        </div>
+
+        <div class="intro-scroll-track">
+
+            <div class="intro-text-block">
+                <p class="te-intro-text">
+                    當身體發出劇烈的疼痛訊號，<br>
+                    但他人的目光卻迫使你必須隱忍——<br>
+                    那是一種什麼樣的感覺？
+                </p>
+            </div>
+
+            <div class="intro-text-block">
+                <p class="te-intro-text">
+                    我們想邀請你花 30 秒，<br>
+                    透過一個大家可能都經歷過的<br>
+                    「身體失控」瞬間，<br>
+                    來進行一場思想實驗。
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section id="thought-experiment">
+
+        <div class="cinema-scroll-track">
+
+            <div class="sticky-viewport">
+                <div class="cinema-screen-frame" style="background-image: url('images/thought-experiment/02.webp');">
+                    <div class="cinema-overlay"></div>
+                    <div class="inner-thoughts-container">
+                        <div class="thought-bubble t1">痛死了......</div>
+                        <div class="thought-bubble t2">怎麼辦？</div>
+                        <div class="thought-bubble t3">再忍一下就好。</div>
+                        <div class="thought-bubble t4">要稍微站起來嗎？</div>
+                        <div class="thought-bubble t5">好尷尬......</div>
+                    </div>
+
+                    <div class="subtitle-container">
+                        <div id="dynamic-subtitle" class="movie-subtitle">
+                        </div>
+                    </div>
                 </div>
-                <div class="col-lg-3"></div>
+            </div>
+
+            <div class="scroll-step step-1" data-text="請想像你此刻坐在電影院的正中央，周圍擠滿了觀眾。電影正演到最精彩、最安靜的片段。"></div>
+            <div class="scroll-step step-2" data-text="突然，你的小腿猛烈抽筋，肌肉像被扭緊一樣劇痛。"></div>
+            <div class="scroll-step step-3" data-text="你知道只要站起來用力伸直腿就會舒服很多，但那意味著你會擋住後面所有人的視線。"></div>
+            <div class="scroll-step step-4" data-text="這時候，你會怎麼做？"></div>
+
+        </div>
+
+        <div class="cards-section-wrapper">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12 text-center" style="margin-bottom: 2rem;">
+                        <p style="color: #888; font-size: 0.9rem;">請繼續往下滑動，做出你的選擇</p>
+                    </div>
+                </div>
+
+                <div class="te-cards-container">
+
+                    <!-- Card A -->
+                    <div class="te-card-wrapper">
+                        <div class="te-card-inner">
+                            <div class="te-card-front">
+                                <h3 style="filter: brightness(1.5);">A</h3>
+                                <p>不管了<br>
+                                    站起來伸展</p>
+                                <span class="te-instruction">點擊選項</span>
+                            </div>
+                            <div class="te-card-back">
+                                <div class="te-feedback-title">「身體舒服了，但心裡不舒服。」</div>
+                                <div class="te-feedback-text">
+                                    你終於解開了肌肉的鎖死，但後方不斷傳來「嘖嘖」的嫌棄，幾十雙眼睛在黑暗中盯著你。你成了干擾大家的人，那份尷尬感讓你再也無法融入電影的情節。
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Card B -->
+                    <div class="te-card-wrapper">
+                        <div class="te-card-inner">
+                            <div class="te-card-front">
+                                <h3 style="filter: brightness(1.5);">B</h3>
+                                <p>直接起身離場<br>
+                                    休息片刻</p>
+                                <span class="te-instruction">點擊選項</span>
+                            </div>
+                            <div class="te-card-back">
+                                <div class="te-feedback-title">「你是自由的，但也是孤獨的。」</div>
+                                <div class="te-feedback-text">
+                                    你逃離了那個壓抑的座位，在走廊上大口喘氣。腿不痛了，但你也錯過了電影最關鍵的結局。為了緩解疼痛，你被迫處於「缺席」的狀態。
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Card C -->
+                    <div class="te-card-wrapper">
+                        <div class="te-card-inner">
+                            <div class="te-card-front">
+                                <h3 style="filter: brightness(1.5);">C</h3>
+                                <p>咬牙忍耐<br>
+                                    不能動</p>
+                                <span class="te-instruction">點擊選項</span>
+                            </div>
+                            <div class="te-card-back">
+                                <div class="te-feedback-title">「你保全了體面，卻透支了身體。」</div>
+                                <div class="te-feedback-text">
+                                    電影結束了，沒人發現你的異狀。但那幾分鐘的強忍，讓你的肌肉嚴重發炎，今晚可能痛到無法走路。這是大多數人面對疼痛時最常做的選擇——隱忍。
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Outro -->
+                <section id="outro-scrolly" class="outro-container"
+                    style="width: 100vw; position: relative; left: 50%; right: 50%; margin-left: -50vw; margin-right: -50vw;">
+
+                    <div class="outro-sticky-layer">
+                        <div class="outro-bg-image" style="background-image: url('images/thought-experiment/03.webp');">
+                        </div>
+                        <div class="outro-overlay"></div>
+                    </div>
+
+                    <div class="outro-scroll-track">
+
+                        <div class="outro-text-block">
+                            <p>剛剛那幾分鐘的糾結，是不是很煎熬？</p>
+                            <p class="small-note">對於大多數人來說，抽筋只是偶發事件，忍過了就好。</p>
+                        </div>
+
+                        <div class="outro-text-block">
+                            <p>但請試著想像，如果這種</p>
+                            <span class="red-spot">
+                                不得不忍耐、隨時會讓你在<br class="d-md-none">人群中「出醜」
+                            </span>
+                            <p style="margin-top: 1.5rem;">的疼痛......</p>
+                        </div>
+
+                        <div class="outro-text-block">
+                            <p class="final-question">不是幾分鐘，<br>而是持續了好幾年呢？</p>
+                        </div>
+                    </div>
+                </section>
             </div>
         </div>
     </section>
@@ -70,7 +213,8 @@
                 <p class="line">在醫院擔任衛教人員的她，</p>
                 <p class="line">是一位<strong>慢性下背痛</strong>患者。</p>
                 <p class="line">近三年來，每當症狀惡化，</p>
-                <p class="line">這樣的「抉擇」便成為她不得不面對的</p>
+                <p class="line">在「出醜」與隱忍之間的抉擇，</p>
+                <p class="line">便成為她不得不面對的...</p>
             </div>
             <div class="intro-text intro-text-left intro-text-final-left">
                 <p class="line line-emphasis">日</p>
@@ -78,6 +222,9 @@
             <div class="intro-text intro-text-right intro-text-final-right">
                 <p class="line line-emphasis">常</p>
             </div>
+
+            <!-- Image Credit -->
+            <div class="face-image-credit">保護受訪者隱私，此為虛構肖像 | Nano Banana Pro</div>
         </div>
 
         <!-- Header -->
@@ -106,7 +253,7 @@
                     <div class="col-lg-3"></div>
                     <div class="col-lg-6 content-text">
                         <div class="editorial-note">
-                            <p style="font-weight: 500;">2025/12/11 最後更新<br>
+                            <p style="font-weight: 500;">2025/12/15 最後更新<br>
                                 ※為保護受訪者隱私，「南瓜」之訪談錄音均已變聲處理。</p>
                         </div>
 
@@ -430,16 +577,92 @@
             </section>
         </section>
 
-        <section class="content-section">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-3"></div>
-                    <div class="col-lg-6 content-text">
+        <section class="prevalence-container">
 
+            <div class="scroll-scene" style="height: 250vh;">
+
+                <div class="sticky-visual people-pattern-bg">
+                    <div class="people-overlay"></div>
+                </div>
+
+                <div class="scroll-text-track">
+
+                    <div style="height: 30vh;"></div>
+
+                    <div class="scroll-text-block">
+                        <p>全民健保資料庫的成果報告顯示，在台灣有高達 <strong>70-85%</strong> 的民眾......</p>
                     </div>
-                    <div class="col-lg-3"></div>
+                    <div class="scroll-text-block">
+                        <p>一生中至少會經歷一次下背痛。若以疼痛程度來看，則僅次於頭痛。</p>
+                    </div>
                 </div>
             </div>
+
+            <div class="scroll-scene" style="height: 350vh;">
+
+                <div class="sticky-visual counter-bg">
+                    <div class="counter-wrapper">
+                        <span class="counter-label">全台就診人數/年</span>
+                        <span id="patient-counter" class="counter-number">0</span>
+                        <span class="counter-unit">人</span>
+                    </div>
+                </div>
+
+                <div class="scroll-text-track">
+
+                    <div style="height: 30vh;"></div>
+
+                    <div class="scroll-text-block light-bg-text">
+                        <p>不僅如此，統計指出，光是因「背痛」走進西醫門診的患者......</p>
+                    </div>
+
+                    <div class="scroll-text-block light-bg-text">
+                        <p>一年就高達 201 萬人。</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="content-section" style="background-color: var(--bg-content); padding-top: 100px;">
+                <div class="container">
+                    <div class="row justify-content-center">
+                        <div style="height: 10vh;"></div>
+                        <div class="col-lg-6 content-text text-center">
+
+                            <p>這不僅是 45 歲以下族群<strong>暫時失能</strong>的首要原因，甚至在職場上，每七張病假單就有一張與<strong>下背痛</strong>有關 。</p>
+
+                            <div style="height: 10vh;"></div>
+
+                            <div class="sick-leave-visual reveal-on-scroll">
+                                <div class="paper-icon"></div>
+                                <div class="paper-icon"></div>
+                                <div class="paper-icon"></div>
+                                <div class="paper-icon target"></div>
+                                <div class="paper-icon"></div>
+                                <div class="paper-icon"></div>
+                                <div class="paper-icon"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="content-section">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-3"></div>
+                        <div class="col-lg-6 content-text">
+                            <p>下背痛發作時，痛感可能從下背延伸至臀部、大腿甚至腳底，導致行走困難。許多時候，連簡單的彎腰、穿襪子，或從椅子上站起來，都可能因為劇痛而變得困難。此外，疼痛常在夜間加劇，導致患者難以入眠或痛醒，嚴重影響睡眠品質。
+                            </p>
+                            <p><strong>然而最讓人絕望的不是痛，而是「好不了」。</strong></p>
+                            <p>研究指出，下背痛一年內的再復發機率高達 7 成。更有 10% 至 20% 的患者演變為持續超過三個月的「慢性下背痛」。</p>
+                            <p>南瓜，正是這數據下的真實縮影——從初期的反覆發作，最終一步步落入了慢性疼痛的泥沼。</p>
+                            <div style="height: 5vh;"></div>
+                        </div>
+                        <div class="col-lg-3"></div>
+                    </div>
+                </div>
+            </div>
+
         </section>
 
         <!-- ========================================
@@ -466,37 +689,136 @@
                         <p>為什麼有高達七成的患者會復發？為什麼患者會落入「慢性下背痛」的泥沼中？</p>
                         <p>問題或許不在於醫療技術不夠精進，而在於我們的現行醫療制度，往往只來得及看見「下背痛」這個疾病分類，卻因為種種因素限制，<strong>難以看見那個正在受苦的「人」</strong>。
                         </p>
-                        <p>在現行醫療體系下，醫師在診間中會進行問診、理學檢查以及影像學檢查，這三者共同扮演著關鍵的「篩選」與<button class="expandable-note-trigger" aria-expanded="false" 
-                            aria-controls="note-3">排除（Rule Out）<span
+                        <p>在現行醫療體系下，醫師在診間中會進行問診、理學檢查以及影像學檢查，這三者共同扮演著關鍵的「篩選」與<button class="expandable-note-trigger"
+                                aria-expanded="false" aria-controls="note-3">排除（Rule Out）<span
                                     class="note-arrow">▼</span></button>角色。綜合評估的最終目的是——判斷患者是否屬於嚴重的結構損傷，或其他需要手術立即介入的族群。一旦透過以上檢查排除「立即的危險」後，在醫療邏輯上，醫師的階段性任務便完成了。
                         </p>
                         <div id="note-3" class="expandable-note-content" aria-hidden="true">
-                            <p>在醫學上，「排除 (Rule Out)」是指透過檢查與鑑別診斷，證實某種疾病的可能性非常低或根本不存在的過程，常在初步懷疑某病時，使用高靈敏度檢測來排除特定診斷，幫助醫師縮小範圍，導向正確的疾病診斷。
+                            <p>在醫學上，「排除 (Rule
+                                Out)」是指透過檢查與鑑別診斷，證實某種疾病的可能性非常低或根本不存在的過程，常在初步懷疑某病時，使用高靈敏度檢測來排除特定診斷，幫助醫師縮小範圍，導向正確的疾病診斷。
                             </p>
                         </div>
-                        <p>然而，在健保體制壓縮的看診時間壓力下，這個以「確認無立即危險」為首要目標的篩選機制，便造就了南瓜在診間的遭遇。當她帶著顯示椎間盤「破裂」的核磁共振影像，焦急地尋求解釋時，健保門診醫師僅給了她一句：「喔，就突出啊」。這句話聽在南瓜耳裡是敷衍，但在醫療邏輯裡，這代表醫師已經綜合評估過，並且做出了專業判斷——確認結構問題（椎間盤突出），並根據南瓜當時的病徵表現等，排除緊急處置的必要性。接著，醫師便按照流程，給了她一張制式的衛教單，並叮囑「不要坐太久」。然而，這些標準化的建議往往難以消除患者深層的焦慮——「以我現在的狀況，真的可以做這些動作嗎？會不會更嚴重？」南瓜拿著單子，心中的疑問卻比進診間前更多了。
+                        <p>然而，在健保體制壓縮的看診時間壓力下，這個以「確認無立即危險」為首要目標的篩選機制，便造就了南瓜在診間的遭遇。
+                        </p>
+                        <p>當她帶著顯示椎間盤「破裂」的核磁共振影像焦急地尋求解釋時，健保門診醫師僅給了她一句：「喔，就突出啊」。這句話聽在南瓜耳裡是敷衍，但在醫療邏輯裡，這代表醫師已經綜合評估過，並且做出了專業判斷——確認結構問題（椎間盤突出），並根據南瓜當時的病徵表現等，排除緊急處置的必要性。接著，醫師便按照流程，給了她一張制式的衛教單，並叮囑「不要坐太久」。然而，這些標準化的建議往往難以消除患者深層的焦慮——「以我現在的狀況，真的可以做這些動作嗎？會不會更嚴重？」南瓜拿著單子，心中的疑問卻比進診間前更多了。
                         </p>
                         <p>為什麼在醫師確認脊椎結構沒有立即危險後，南瓜的焦慮卻沒有消失？</p>
                         <p>因為由影像學呈現的「客觀」身體結構，與患者的「主觀」疼痛之間，存在著落差。</p>
                         <p>在臨床上，經常出現「影像看起來還好、但病人痛得要死」，或是「影像很嚴重、病人卻不怎麼痛」的矛盾現象。癒健物理治療所的方藝靜物理治療師指出，面對這種不一致，「影像報告應該只是作為『輔助』用」，真正的治療，應該優先處理患者當下實際面臨的疼痛表現：
                         </p>
-                        <p>（影片）</p>
+
+                        <div class="video-wrapper">
+                            <video class="autoplay-video" muted playsinline preload="metadata" controls>
+                                <source src="videos/01.mp4" type="video/mp4">
+                            </video>
+
+                            <!-- <button class="video-mute-btn" aria-label="開啟聲音">
+
+                                <div class="icon-muted">
+                                    <svg viewBox="0 0 24 24">
+                                        <path
+                                            d="M16.5 12c0-1.77-1.02-3.29-2.5-4.03v2.21l2.45 2.45c.03-.2.05-.41.05-.63zm2.5 0c0 .94-.2 1.82-.54 2.64l1.51 1.51C20.63 14.91 21 13.5 21 12c0-4.28-2.99-7.86-7-8.77v2.06c2.89.86 5 3.54 5 6.71zM4.27 3L3 4.27 7.73 9H3v6h4l5 5v-6.73l4.25 4.25c-.67.52-1.42.93-2.25 1.18v2.06c1.38-.31 2.63-.95 3.69-1.81L19.73 21 21 19.73 4.27 3zM12 4L9.91 6.09 12 8.18V4z" />
+                                    </svg>
+                                </div>
+
+                                <div class="icon-unmuted" style="display: none;">
+                                    <svg viewBox="0 0 24 24">
+                                        <path
+                                            d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z" />
+                                    </svg>
+                                </div>
+
+                            </button> -->
+                        </div>
+
                         <p>臺中榮民總醫院神經外科主治醫師陳則宇也解釋：「因為我們影像學，只能看一些結構性的問題。」</p>
-                        <p>（影片）</p>
+
+                        <div class="video-wrapper">
+                            <video class="autoplay-video" muted playsinline preload="metadata" controls>
+                                <source src="videos/02.mp4" type="video/mp4">
+                            </video>
+
+                            <!-- <button class="video-mute-btn" aria-label="開啟聲音">
+
+                                <div class="icon-muted">
+                                    <svg viewBox="0 0 24 24">
+                                        <path
+                                            d="M16.5 12c0-1.77-1.02-3.29-2.5-4.03v2.21l2.45 2.45c.03-.2.05-.41.05-.63zm2.5 0c0 .94-.2 1.82-.54 2.64l1.51 1.51C20.63 14.91 21 13.5 21 12c0-4.28-2.99-7.86-7-8.77v2.06c2.89.86 5 3.54 5 6.71zM4.27 3L3 4.27 7.73 9H3v6h4l5 5v-6.73l4.25 4.25c-.67.52-1.42.93-2.25 1.18v2.06c1.38-.31 2.63-.95 3.69-1.81L19.73 21 21 19.73 4.27 3zM12 4L9.91 6.09 12 8.18V4z" />
+                                    </svg>
+                                </div>
+
+                                <div class="icon-unmuted" style="display: none;">
+                                    <svg viewBox="0 0 24 24">
+                                        <path
+                                            d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z" />
+                                    </svg>
+                                </div>
+
+                            </button> -->
+                        </div>
+
                         <p>若無法看出在「疼痛表現」之下，實際影響著患者的疼痛因子，治療者與患者就難以在治療過程中得到最佳成效。以南瓜為例，她的背痛反覆發作，並非僅源於核磁共振影像上那顆突出的椎間盤。她與母親之間的複雜關係，以及對於與男性在密閉空間獨處的深層恐懼，這些由情緒記憶所觸發的疼痛，卻是短短的問診時間，以及以「確認無立即危險」為首要目標的篩選機制，所無法看見的隱形傷痕。
                         </p>
                         <p>然而，要揭開這些躲在影像背後、千絲萬縷的身心糾葛，需要醫師詳盡的問診、傾聽與抽絲剝繭——而在分秒必爭的健保體制內，這恰恰是最奢侈的資源。</p>
                         <p>面對這種現象，陳則宇醫師坦言：</p>
-                        <p>（影片）</p>
+
+                        <div class="video-wrapper">
+                            <video class="autoplay-video" muted playsinline preload="metadata" controls>
+                                <source src="videos/03.mp4" type="video/mp4">
+                            </video>
+
+                            <!-- <button class="video-mute-btn" aria-label="開啟聲音">
+
+                                <div class="icon-muted">
+                                    <svg viewBox="0 0 24 24">
+                                        <path
+                                            d="M16.5 12c0-1.77-1.02-3.29-2.5-4.03v2.21l2.45 2.45c.03-.2.05-.41.05-.63zm2.5 0c0 .94-.2 1.82-.54 2.64l1.51 1.51C20.63 14.91 21 13.5 21 12c0-4.28-2.99-7.86-7-8.77v2.06c2.89.86 5 3.54 5 6.71zM4.27 3L3 4.27 7.73 9H3v6h4l5 5v-6.73l4.25 4.25c-.67.52-1.42.93-2.25 1.18v2.06c1.38-.31 2.63-.95 3.69-1.81L19.73 21 21 19.73 4.27 3zM12 4L9.91 6.09 12 8.18V4z" />
+                                    </svg>
+                                </div>
+
+                                <div class="icon-unmuted" style="display: none;">
+                                    <svg viewBox="0 0 24 24">
+                                        <path
+                                            d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z" />
+                                    </svg>
+                                </div>
+
+                            </button> -->
+                        </div>
+
                         <p>在有限的時間內，醫師必須優先處理「最緊急」的問題。這看似高效率的運轉，代價卻是犧牲了對慢性疼痛患者的完整解答。而這股追求效率的壓力，同樣延伸到了復健現場。</p>
                         <p>曾任職於健保診所的方藝靜治療師也點出，在健保點值限制下，復健現場有如「工廠」的境況：</p>
-                        <p>（影片）</p>
+
+                        <div class="video-wrapper">
+                            <video class="autoplay-video" muted playsinline preload="metadata" controls>
+                                <source src="videos/04.mp4" type="video/mp4">
+                            </video>
+
+                            <!-- <button class="video-mute-btn" aria-label="開啟聲音">
+
+                                <div class="icon-muted">
+                                    <svg viewBox="0 0 24 24">
+                                        <path
+                                            d="M16.5 12c0-1.77-1.02-3.29-2.5-4.03v2.21l2.45 2.45c.03-.2.05-.41.05-.63zm2.5 0c0 .94-.2 1.82-.54 2.64l1.51 1.51C20.63 14.91 21 13.5 21 12c0-4.28-2.99-7.86-7-8.77v2.06c2.89.86 5 3.54 5 6.71zM4.27 3L3 4.27 7.73 9H3v6h4l5 5v-6.73l4.25 4.25c-.67.52-1.42.93-2.25 1.18v2.06c1.38-.31 2.63-.95 3.69-1.81L19.73 21 21 19.73 4.27 3zM12 4L9.91 6.09 12 8.18V4z" />
+                                    </svg>
+                                </div>
+
+                                <div class="icon-unmuted" style="display: none;">
+                                    <svg viewBox="0 0 24 24">
+                                        <path
+                                            d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z" />
+                                    </svg>
+                                </div>
+
+                            </button> -->
+                        </div>
+
                         <p>在這種不得不追求「翻桌率」的機制下，南瓜便是在這條標準化的「輸送帶」上，空轉了五、六年。</p>
                         <p>方藝靜治療師指出，這種「工廠化」最大的代價，便是壓縮了治療師與患者進行衛教的時間。因為「沒有接收到衛教資訊」、「不知道自己的治療計畫」，許多患者便像南瓜一樣，在接受儀器治療後感覺症狀稍微緩解，便誤以為「好了」而停止治療；直到下一次復發，又再次回到診所報到。
                         </p>
                         <p>若能獲得更完整的衛教資源，或許南瓜就能在她落入慢性疼痛泥沼之前踩下煞車。然而，在既有健保制度與成本壓力下，這份「多說幾句」的衛教與關懷，卻往往成為復健現場難以實踐的理想。</p>
-                        <p>在既有健保制度之下，壓縮的時間把醫師問診與復健治療變成了流水線。我們往往只顧著修理「壞掉的零件」，卻忽略了這副身體裡，還裝著一個負責解讀訊號、調控感受的大腦與神經系統。</p>
-                        <p>什麼是「痛」？國際疼痛協會將其定義為<strong>「一種不愉快的知覺與情緒經驗，與實際或潛在的組織損傷有關，或者以上述的形式被描述」</strong>。方藝靜治療師進一步解釋，疼痛不只是身體受傷的訊號，更是大腦經過「認知評估」後的產物。這意味著，痛不痛、有多痛，最終其實是由大腦來決定的。
+                        <p>當「壓縮的時間」把醫師問診與復健治療變成了流水線。我們往往只顧著修理「壞掉的零件」，卻忽略了這副身體裡，還裝著一個負責解讀訊號、調控感受的大腦與神經系統。</p>
+                        <p>什麼是「痛」？國際疼痛協會將其定義為「一種不愉快的知覺與情緒經驗，與實際或潛在的組織損傷有關，或者以上述的形式被描述」。方藝靜治療師進一步解釋，疼痛不只是身體受傷的訊號，更是大腦經過「認知評估」後的產物。這意味著，<strong>痛不痛、有多痛，最終其實是由大腦來決定的</strong>。
                         </p>
                         <p>為了說明大腦如何決定疼痛的強弱，方藝靜治療師舉了一個生動的例子：「假設今天被一根釘子刺到，訊號傳進大腦後，會經過一層『情緒與認知』的篩選。如果一個人曾有被家暴、甚至被釘子傷害過的創傷記憶，他的大腦會瞬間判定這是『極度危險』，進而將疼痛訊號放大；反之，若只認為是不小心的意外，大腦可能判定沒事，疼痛感就會被縮小甚至忽略。」
                         </p>
@@ -506,7 +828,28 @@
                         <p>方藝靜治療師進一步指出，當疼痛持續的時間夠久，它影響的就不只是當下的生理反應，更會進一步「重塑」大腦的運作——包含認知系統、掌管情緒與恐懼的杏仁核，甚至語言表達、免疫與內分泌系統都會受到影響；而當大腦逐漸<strong>適應</strong>疼痛這個「生存危機」，患者「可能對於疼痛的感受就會一直被放大」。
                         </p>
                         <p>當大腦為了「生存」而持續拉響警報，患者便容易陷入一種身心的惡性循環。方藝靜治療師用了一個非常貼切的隱喻來形容這種狀態：</p>
-                        <p>（語音）</p>
+                    </div>
+                    <div class="col-lg-3"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Media Block 8-->
+        <div class="full-bleed-media">
+            <img src="images/medical-gap/01.webp" alt="Image Medical Gap" class="media-image">
+            <div class="image-credit">圖 | Nano Banana Pro</div>
+            <div class="audio-story-player" data-audio-src="audio/PT/01.m4a" data-player-id="8">
+                <!-- Player structure will be generated by JS -->
+                <script type="application/json">[{"start":0.0,"end":0.05,"text":""},{"start": 0.05,"end": 2.0,"text": "你就會很像在那個沼澤地裡面"},{"start": 2.0,"end": 3.3,"text": "你就會出不來了"},{"start": 3.3,"end": 6.0,"text": "因為你一直都在這個迴圈裡面"}]                              
+                                </script>
+            </div>
+        </div>
+
+        <section class="content-section">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-3"></div>
+                    <div class="col-lg-6 content-text">
                         <p>在這片沼澤裡，焦慮引發疼痛，疼痛又加深焦慮。這群人來到診間時，往往帶著驚恐與無助，「因為他們就是已經在這個疼痛的生存危機裡面，所以他們不知道要怎麼辦。」</p>
                         <p>這正是南瓜，以及台灣兩百萬下背痛患者面臨的真實處境：他們在尋找能治好下背痛的醫生，但他們真正需要的，或許是一個能看見他們大腦裡那片沼澤，並願意拉他們一把的醫療體系。</p>
                     </div>
@@ -514,6 +857,7 @@
                 </div>
             </div>
         </section>
+
 
         <!-- ========================================
         Ending Section
@@ -541,7 +885,7 @@
                             <p>方藝靜治療師舉例，若將慢性下背痛患者依病因分群，年輕一點的上班族多半是椎間盤突出引起，年紀大的則是椎間孔狹窄或退化性關節炎。「但今天以這個定義去界定這群人的話，我們就會很難看到慢性下背痛的多樣性，因為這樣子我們會以疾病去看待這個人，但是困擾他們的其實是<strong>疼痛</strong>這件事。」
                             </p>
 
-                            <p>「如果要真正理解患者的疼痛，就必須先把他們從疾病本身抽離出來，<strong>把「人」放回治療的核心</strong>。去理解這個人為什麼而痛？疼痛背後，真正困擾著他們的是什麼？」
+                            <p>「如果要真正理解患者的疼痛，就必須先把他們從疾病本身抽離出來，<strong>把『人』放回治療的核心</strong>。去理解這個人為什麼而痛？疼痛背後，真正困擾著他們的是什麼？」
                             </p>
 
                             <p>因此，方藝靜治療師認為，在理想的狀況下，慢性疼痛的專業照護中需要一個<strong>共造團隊</strong>，包括疼痛科醫生、物理治療師、心理師、社工師等專業人員同時介入。「我們不是想要踢皮球，而是希望更全面去了解每個人所需要的資源。」當各個專業各司其職，<strong>讓患者不用自己在治療迷宮裡單打獨鬥</strong>，才能協助他們在生理、心理與生活型態上，慢慢找回掌控感。
@@ -656,6 +1000,8 @@
     <script src="js/thought-experiment.js"></script>
     <script src="js/face-section.js"></script>
     <script src="js/pumpkin-story.js" defer></script>
+    <script src="js/prevalence.js"></script>
+    <script src="js/medical-gap.js"></script>
 
 </body>
 
