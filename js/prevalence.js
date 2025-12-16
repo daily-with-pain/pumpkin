@@ -51,33 +51,22 @@ document.addEventListener("DOMContentLoaded", function () {
                 if (entry.target.classList.contains('stat-bar-container')) {
                     entry.target.classList.add('active');
                 }
-            }
-        });
-    }, observerOptions);
 
-    // 特別監聽「不僅如此...」這段文字離開畫面時觸發數字跳動
-    const triggerTextBlock = document.querySelector('.scroll-text-block.light-bg-text');
-
-    if (triggerTextBlock && counterElement) {
-        const counterObserver = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                // 當文字離開畫面（isIntersecting = false）且還沒跳過數字
-                if (!entry.isIntersecting && !hasCounted) {
+                // 觸發數字跳動 (只跳一次)
+                if (entry.target.classList.contains('counter-bg') && !hasCounted) {
                     animateValue(counterElement, 0, 2015949, 2500); // 2.5秒跑完
                     hasCounted = true;
                 }
-            });
-        }, {
-            root: null,
-            threshold: 0, // 完全離開時觸發
-            rootMargin: "0px"
+            }
         });
-
-        counterObserver.observe(triggerTextBlock);
-    }
+    }, observerOptions);
 
     // 開始監聽所有目標
     document.querySelectorAll('.scroll-text-block').forEach(el => observer.observe(el));
     document.querySelectorAll('.sick-leave-visual').forEach(el => observer.observe(el));
     document.querySelectorAll('.stat-bar-container').forEach(el => observer.observe(el));
+
+    // 特別監聽數字背景，以觸發計數
+    const counterBg = document.querySelector('.counter-bg');
+    if (counterBg) observer.observe(counterBg);
 });
